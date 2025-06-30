@@ -1,0 +1,102 @@
+/* Space-inspired background for the full page */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #0a0f2c, #1c1f3f);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+}
+
+/* Main form container */
+.emailForm {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: rgba(20, 24, 50, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 119, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  backdrop-filter: blur(8px);
+}
+
+/* Inputs & Textarea */
+.emailForm input,
+.emailForm textarea {
+  padding: 14px 18px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background-color: #1c1f3f;
+  color: #ffffff;
+  font-size: 16px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.emailForm input::placeholder,
+.emailForm textarea::placeholder {
+  color: #aaa;
+}
+
+.emailForm input:focus,
+.emailForm textarea:focus {
+  border-color: #00bfff;
+  box-shadow: 0 0 8px rgba(0, 191, 255, 0.4);
+  outline: none;
+}
+
+.emailForm textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit button */
+.emailForm button {
+  background: linear-gradient(to right, #0077ff, #00bfff);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.emailForm button:hover {
+  background: linear-gradient(to right, #005dc1, #009fd4);
+  transform: scale(1.03);
+}
+
+.emailForm button:active {
+  transform: scale(0.97);
+}
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 999;
+  color: white;
+  animation: fadeInOut 3s ease forwards;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+}
+
+.popup.success {
+  background-color: #00b894;
+}
+
+.popup.error {
+  background-color: #d63031;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
